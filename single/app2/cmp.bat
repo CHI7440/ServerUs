@@ -1,0 +1,1 @@
+g++ -static *.cpp -o myapp2.exe -I ..\serverus\include -L ..\serverus\lib -lserverus -lws2_32

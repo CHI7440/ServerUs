@@ -1,0 +1,66 @@
+#ifndef ___SERVERUS
+#define ___SERVERUS 123
+#include<iostream>
+#include<map>
+#include<windows.h>
+#include<io.h>
+using namespace std;
+namespace serverus
+{
+
+class URLEncoding
+{
+public:
+static string decode(string);
+static string encode(string);
+};
+
+class Request
+{
+private:
+map<string, string> attributesMapping;
+public:
+char *method;
+char *resource;
+char isClientSideTechnologyResource;
+char *mimeType;
+int dataCount;
+char **data;
+char *forwardTo;
+Request();
+void setAttribute(string,string);
+string getAttribute(string);
+string get(string);
+void forward(const char* resource);
+};
+
+class Response
+{
+private:
+int clientSocketDescriptor;
+bool headerCreated;
+void createHeader();
+map<int,bool> isClosed;
+public:
+Response(int clientSocketDescriptor);
+void write(string responseBuffer);
+void close();
+};
+
+class ServerUs
+{
+private:
+int portNumber;
+int clientSocketDescriptor;
+int serverSocketDescriptor;
+void (*ptrOnRequest)(Request&,Response&);
+map<string,void(*)(Request&,Response&)> allRequests;
+void clientSide(Request* request);
+void serverSide(Request* request);
+public:
+ServerUs(int portNumber);
+void start();
+void onRequest(string url, void(*ptrOnRequest)(Request&, Response&));
+};
+}
+#endif
