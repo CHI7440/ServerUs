@@ -57,22 +57,6 @@ else if(carCode == 3)  request.forward("/Mercedes.html");
 else if(carCode == 4)  request.forward("/Audi.html");
 }
 
-/*void errorMsg(Request& request, Response& response)
-{
-response.write("<DOCTYPE HTML>");
-response.write("<html lang = 'en'>");
-response.write("<head>");
-response.write("<meta charset = 'utf-8'>");
-response.write("<title>My Cool Website</title>");
-response.write("</head>");
-response.write("<body>");
-response.write("<h1>");
-response.write(request.getAttribute("errorMessage"));
-response.write("</h1>");
-response.write("</body>");
-response.write("</html>");
-response.close();
-}*/
 
 int main()
 {
@@ -81,7 +65,6 @@ server.onRequest("/three",three);
 server.onRequest("/two",two);
 server.onRequest("/one",one);
 server.onRequest("/getCar",getCar);
-//server.onRequest("/errorMessage",errorMsg);
 registerTPLs(&server);
 server.start();
 return 0;

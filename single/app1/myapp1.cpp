@@ -4,7 +4,6 @@
 #include<string.h>
 using namespace serverus;
 using namespace std;
-//void doSomething(int dataCount, char *data[])
 
 class Student
 {
