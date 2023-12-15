@@ -1,6 +1,9 @@
 
 # ServerUs
 
+![ServerUs](https://github.com/CHI7440/ServerUs/assets/104809802/239fe46b-16b6-4ff6-b794-c13abd472382)
+
+
 ServerUs is a single threaded webserver made in C++ used to deploy static and dynamic web application. The webserver also supports for the template html code which helps in adding the dynamic message to a web application.
 
 
@@ -47,19 +50,6 @@ return 0;
 ```
 
 In the above code `server` is the object of class ServerUs with `5050` as a port number after that `server.start()` is to start the server. Also it is compulsory to include `serverus` header and to use the namespace `serverus`
-
-Now to compile the code open the command prompt for the current working folder and write the following command : 
-```c++
-g++ -static *.cpp -o [file name].exe -I [location of the include folder] -L [location of the lib folder] -lserverus -lws2_32
-```
-
-for example in my example the lib and include folder are in serverus folder so the command will be :
-```c++
-g++ -static *.cpp -o myapp3.exe -I ..\serverus\include -L ..\serverus\lib -lserverus -lws2_32
-```
-And then run the code just by writing the name of executable file. 
-
-After that server will get start and now in the browser writing `localhost:[portnumber]` will deploy your website on the browser
 
 ### Deploying Dynamic Websites
 
@@ -183,6 +173,22 @@ $$${errorMessage}
 ```
 You can refer to app2 folder for more clarification.
 
+### How to Compile?
+
+Now to compile the code open the command prompt for the current working folder and write the following command : 
+```c++
+g++ -static *.cpp -o [file name].exe -I [location of the include folder] -L [location of the lib folder] -lserverus -lws2_32
+```
+
+for example in my example the lib and include folder are in serverus folder so the command will be :
+```c++
+g++ -static *.cpp -o myapp3.exe -I ..\serverus\include -L ..\serverus\lib -lserverus -lws2_32
+```
+And then run the code just by writing the name of executable file. 
+
+After that server will get start and now in the browser writing `localhost:[portnumber]` will deploy your website on the browser
+You can also access the web application from remote devices just by typing the `ipv4:portnumber` in your remote device browser URL.
+You can also use Dynamic DNS Service to provide your server a dynamic domain in case if your ip address changes periodically.
 
 ## Application
 
