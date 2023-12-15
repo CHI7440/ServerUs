@@ -188,7 +188,7 @@ And then run the code just by writing the name of executable file.
 
 After that server will get start and now in the browser writing `localhost:[portnumber]` will deploy your website on the browser
 You can also access the web application from remote devices just by typing the `ipv4:portnumber` in your remote device browser URL.
-You can also use Dynamic DNS Service to provide your server a dynamic domain in case if your ip address changes periodically.
+You can also use Dynamic DNS Service to provide your server a dynamic domain in case if your ip address changes periodically(The condition is that remote device should also be connected to same wifi as the server).
 
 ## Application
 
